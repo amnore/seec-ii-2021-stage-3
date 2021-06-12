@@ -1,0 +1,19 @@
+@startuml
+
+package "用户界面层" as ui {
+        package postarea {}
+}
+
+package "业务逻辑层" as logic {
+        package postservice {}
+}
+
+package "数据层" as data {
+        class postmapper
+}
+
+postarea --> postservice
+
+postservice --> postmapper
+
+@enduml

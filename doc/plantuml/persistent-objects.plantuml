@@ -1,0 +1,14 @@
+@startuml
+
+class Post {
+        - Integer id
+        - Date postTime
+        - Date lastCommentTime
+        - String title
+        - String content
+
+        + (getters...)
+        + (setters...)
+}
+
+@enduml

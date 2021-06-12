@@ -1,0 +1,19 @@
+@startuml
+
+class "讨论区" as PostArea
+
+class "贴子" as Post
+
+class "排序方式" as Sort
+
+class "按发表时间倒序" as SortByPostTimeInverse
+
+class "按最新回复时间倒序" as SortByLastReplyTimeInverse
+
+PostArea "1" o--- "*" Post
+PostArea o--- Sort
+
+Sort <|-- SortByLastReplyTimeInverse
+Sort <|-- SortByPostTimeInverse
+
+@enduml

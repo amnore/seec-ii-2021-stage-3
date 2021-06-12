@@ -1,0 +1,8 @@
+@startuml
+
+rectangle "课程主页" as ClassMain
+rectangle "讨论区" as PostArea
+
+ClassMain <-> PostArea
+
+@enduml
