@@ -11,4 +11,12 @@ class Post {
         + (setters...)
 }
 
+class Notification {
+        - Integer id
+        - Integer userId
+        - Date time
+        - Integer commentId
+        - Boolean hasViewed
+}
+
 @enduml
