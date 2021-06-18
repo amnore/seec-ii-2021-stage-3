@@ -1,19 +1,27 @@
 @startuml
 
 package "用户界面层" as ui {
-        package postarea {}
+        package "讨论区" as postarea {}
+        package "通知" as notification {}
 }
 
 package "业务逻辑层" as logic {
-        package postservice {}
+        package "讨论区功能" as postservice {}
+        package "通知功能" as notificationservice {}
 }
 
 package "数据层" as data {
-        class postmapper
+        package "讨论区数据" as postmapper {}
+        package "通知数据" as notificationmapper {}
 }
 
 postarea --> postservice
+notification --> notificationservice
+
+postservice -> notificationservice
+notificationservice -> postservice
 
 postservice --> postmapper
+notificationservice --> notificationmapper
 
 @enduml

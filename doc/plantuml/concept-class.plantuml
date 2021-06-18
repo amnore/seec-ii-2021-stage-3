@@ -1,0 +1,27 @@
+@startuml
+
+class "用户" as User
+class "学生" as Student
+class "教师" as Teacher
+class "课程" as Class
+class "讨论区" as PostArea
+class "贴子" as Post
+class "回复" as Comment
+class "通知" as Notification
+
+Class "1" o- "1" PostArea
+PostArea "1" o- "*" Post
+Post "1" o- "*" Comment
+Comment "1" -- "0..1" Notification
+
+User <|-- Student
+User <|-- Teacher
+
+User "1" -- "*" Comment
+User "1" -- "*" Post
+User "1" o- "*" Notification
+
+Student "*" -- "*" Class: "购买"
+Teacher "*" -- "*" Class: "创建"
+
+@enduml
