@@ -1,0 +1,20 @@
+@startuml
+
+actor "教师或者学生" as User
+participant "评论" as Comment
+participant "贴子" as Post
+
+activate User
+activate Post
+
+User -> Comment: "create"
+activate Comment
+
+Comment -> Post: "记录到"
+Comment --> User: "评论成功"
+destroy Comment
+
+Post -> User: "通知被回复者"
+        
+
+@enduml

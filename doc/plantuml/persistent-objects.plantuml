@@ -6,9 +6,21 @@ class Post {
         - Date lastCommentTime
         - String title
         - String content
+}
 
-        + (getters...)
-        + (setters...)
+enum CommentType {
+        TO_POST,
+        TO_COMMENT
+}
+
+class Comment {
+        - Integer commentId
+        - CommentType type
+        - Integer receiverId
+        - Integer authorId
+        - String content
+        - Integer postId
+        - Date timeStamp
 }
 
 class Notification {

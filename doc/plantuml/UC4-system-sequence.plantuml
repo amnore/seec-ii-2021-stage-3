@@ -1,0 +1,10 @@
+@startuml
+
+actor "教师或学生" as User
+participant "courselearning 系统" as System
+
+User -> System: "编辑评论内容"
+System --> User: "评论成功"
+System -> User: "通知收到评论/贴子"
+
+@enduml
